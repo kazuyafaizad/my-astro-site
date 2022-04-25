@@ -1,19 +1,19 @@
 ---
 setup: |
-  import Layout from '../../layouts/BlogPost.astro'
-  import Cool from '../../components/Author.astro'
+  import Layout from '@/layouts/BlogPost.astro'
+  import Cool from '@/components/Author.astro'
 title: Hello world!
-publishDate: 12 Sep 2021
-name: Nate Moore
+publishDate: 26 Apr 2022
+name: Faizak
 value: 128
 description: Just a Hello World Post!
 ---
 
-<Cool name={frontmatter.name} href="https://twitter.com/n_moore" client:load />
+<Cool name={frontmatter.name} href="https://twitter.com/karamelxyz" client:load />
 
-This is so cool!
+これ、めっちゃカッコいい。
 
-Do variables work {frontmatter.value * 2}?
+変数が働くか {frontmatter.value \* 2}?
 
 ```javascript
 // Example JavaScript
@@ -22,5 +22,4 @@ const x = 7;
 function returnSeven() {
   return x;
 }
-
 ```
