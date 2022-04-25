@@ -30,7 +30,7 @@ allPosts = allPosts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf()
 		<BlogHeader />
 		<div class="wrapper">
 			<main class="content">
-				<section aria-label="Blog post list">
+				<section aria-label="Blog post list" class="grid grid-cols-3 gap-5">
 					{allPosts.map((p) => <BlogPostPreview post={p} />)}
 				</section>
 			</main>

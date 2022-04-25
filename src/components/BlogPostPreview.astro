@@ -5,7 +5,7 @@ export interface Props {
 
 const { post } = Astro.props;
 ---
-<article class="card card-compact w-96 bg-neutral text-neutral-content shadow-xl">
+<article class="card card-compact bg-neutral text-neutral-content shadow-xl">
   <div class="card-body">
   	<a href={post.url}><h1 class="card-title">{post.frontmatter.title}</h1></a>
 	<p class="publish-date">{post.frontmatter.publishDate}</p>
