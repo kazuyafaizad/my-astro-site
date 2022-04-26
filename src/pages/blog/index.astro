@@ -1,0 +1,39 @@
+---
+// Component Imports
+import BaseHead from '@/components/BaseHead.astro';
+import BlogHeader from '@/components/BlogHeader.astro';
+import BlogPostPreview from '@/components/BlogPostPreview.astro';
+
+// Component Script:
+// You can write any JavaScript/TypeScript that you'd like here.
+// It will run during the build, but never in the browser.
+// All variables are available to use in the HTML template below.
+let title = 'My Blog';
+let description = 'Learn everyday.';
+let permalink = 'https://kazuyafaizad.github.com/';
+
+// Data Fetching: List all Markdown posts in the repo.
+
+let allPosts = await Astro.glob('./posts/*.md');
+allPosts = allPosts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf());
+
+// Full Astro Component Syntax:
+// https://docs.astro.build/core-concepts/astro-components/
+---
+
+<html lang="en" >
+	<head>
+		<BaseHead {title} {description} {permalink} />
+	</head>
+
+	<body>
+		<div class="wrapper min-height-screen">
+			<BlogHeader />
+			<main class="content">
+				<section aria-label="Blog post list" class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+					{allPosts.map((p) => <BlogPostPreview post={p} />)}
+				</section>
+			</main>
+		</div>
+	</body>
+</html>

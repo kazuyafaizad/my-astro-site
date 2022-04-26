@@ -1,10 +1,10 @@
 ---
 setup: |
-  import Layout from '@/layouts/BlogPost.astro'
-  import Cool from '@/components/Author.astro'
+  import Layout from '../../../layouts/BlogPost.astro'
+  import Cool from '../../../components/Author.astro'
 title: Hello world!
 publishDate: 26 Apr 2022
-name: Faizak
+name: k
 value: 128
 description: Just a Hello World Post!
 ---

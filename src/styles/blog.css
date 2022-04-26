@@ -273,3 +273,7 @@ blockquote .source {
 	color: var(--color);
 	font-size: 1rem;
 }
+
+.min-height-screen {
+	min-height: 100vh;
+}

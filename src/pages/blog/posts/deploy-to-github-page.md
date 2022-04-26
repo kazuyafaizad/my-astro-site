@@ -1,13 +1,26 @@
 ---
-layout: ../../layouts/BlogPost.astro
-title: Deploy a Website
-description: Just copy from doc and edit
+layout: ../../../layouts/BlogPost.astro
+title: Auto CI Deploy Astro Website to Github Pages
+description: By following description from Official Docs,
 ---
+
+Steps are more detail in Official Website
+https://docs.astro.build/en/guides/deploy/
 
 ## GitHub Pages
 
-1. Set the correct config `site` in `astro.config.mjs`.
-1. Inside your project, create `deploy.sh` with the following content (uncommenting the appropriate lines), and run it to deploy:
+1. Create 2 repos for Astro and one with named <yourusername>.github.io. Just push Astro project to main branch of your Astro repo.
+1. And set in the config `site` in `astro.config.mjs`.
+
+   Example:
+
+```
+{
+  site:'https://kazuyafaizad.github.io'
+}
+```
+
+2. Inside your project, create `deploy.sh` with the following content (uncommenting the appropriate lines), and run it to deploy:
 
    ```bash
    #!/usr/bin/env sh
@@ -40,16 +53,12 @@ description: Just copy from doc and edit
    cd -
    ```
 
-   > You can also run the above script in your CI setup to enable automatic deployment on each push.
-
 ### GitHub Actions
 
 1. In the target project (\<YOUR USERNAME\>.github.io) repo, create `gh-pages` branch then go to Settings > Pages and set to `gh-pages` branch for GitHub Pages and set directory to `/` (root).
-2. Set the correct config `site` in `astro.config.mjs`.
-3. Create the file `.github/workflows/main.yml` and add in the yaml below. Make sure to edit in your own details.
-4. In GitHub go to Settings > Developer settings > Personal Access tokens. Generate a new token with repo and workflow permissions.
-5. In the astro project repo (not \<YOUR USERNAME\>.github.io) go to Settings > Secrets and add your new personal access token with the name `API_TOKEN_GITHUB`.
-6. When you push changes to the astro project repo CI will deploy them to \<YOUR USERNAME\>.github.io for you.
+2. Create the file `.github/workflows/main.yml` and add in the yaml below. Fill in appropriate detail such env. githubEmail and deployToRepo. This would be enough to standard deployment
+3. In GitHub go to Settings > Developer settings > Personal Access tokens. Generate a new token with repo and workflow permissions.
+4. In the astro project repo (not \<YOUR USERNAME\>.github.io) go to Settings > Secrets and add your new personal access token with the name `API_TOKEN_GITHUB`.
 
 ```yaml
 # Workflow to build and deploy to your GitHub Pages repo.
@@ -103,3 +112,5 @@ jobs:
           commit-message: Deploy ORIGIN_COMMIT
           target-branch: gh-pages
 ```
+
+6. When you push changes to the astro project repo CI will deploy them to \<YOUR USERNAME\>.github.io for you.
