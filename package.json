@@ -11,15 +11,15 @@
   "devDependencies": {
     "@astrojs/partytown": "^0.1.2",
     "@astrojs/preact": "^0.1.2",
-    "@astrojs/tailwind": "^0.2.0",
-    "astro": "^1.0.0-beta.17"
+    "@astrojs/tailwind": "^0.2.1",
+    "astro": "1.0.0-beta.27"
   },
   "dependencies": {
-    "@babel/core": "^7.17.9",
-    "autoprefixer": "^10.4.5",
-    "daisyui": "^2.14.2",
-    "postcss": "^8.4.12",
-    "preact": "^10.7.1",
-    "sass": "^1.50.1"
+    "@babel/core": "^7.17.10",
+    "autoprefixer": "^10.4.7",
+    "daisyui": "^2.14.3",
+    "postcss": "^8.4.13",
+    "preact": "^10.7.2",
+    "sass": "^1.51.0"
   }
 }
