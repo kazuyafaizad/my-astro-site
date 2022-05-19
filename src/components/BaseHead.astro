@@ -1,12 +1,12 @@
 ---
 
 
-export interface Props {
-	title: string;
-	description: string;
-	permalink: string;
-}
-const { title, description, permalink } = Astro.props;
+	export interface Props {
+		title: string;
+		description: string;
+		permalink: string;
+	}
+	const { title, description, permalink } = Astro.props;
 ---
 
 <!-- Global Metadata -->
@@ -24,18 +24,18 @@ const { title, description, permalink } = Astro.props;
 <meta property="og:url" content={permalink} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content="https://astro.build/social.jpg?v=1" />
+<meta property="og:image" content="favicon-96x96" />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content={permalink} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
-<meta property="twitter:image" content="https://astro.build/social.jpg?v=1" />
+<meta property="twitter:image" content="favicon-96x96" />
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.gstatic.com" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz@6..96&display=swap" rel="stylesheet">
-
+<script is:inline src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
